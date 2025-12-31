@@ -12,6 +12,7 @@ module.exports = {
         padding: '1rem',
       },
       colors: {
+ codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         surface: 'hsl(var(--surface))',
@@ -40,6 +41,16 @@ module.exports = {
       },
       boxShadow: {
         card: '0 10px 30px rgba(15, 23, 42, 0.05)',
+
+        brand: {
+          DEFAULT: '#0F766E',
+          light: '#14B8A6',
+          dark: '#115E59',
+        },
+      },
+      fontFamily: {
+        cairo: ['var(--font-cairo)'],
+ main
       },
     },
   },
