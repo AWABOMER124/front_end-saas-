@@ -8,13 +8,22 @@ export default function SettingsPage() {
   return (
     <div className="space-y-4">
       <div>
+ codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
+        <p className="text-sm text-textSecondary">تهيئة المتجر</p>
+        <h1 className="text-2xl font-bold text-textPrimary">الإعدادات</h1>
+
         <p className="text-sm text-slate-500">تهيئة المتجر</p>
         <h1 className="text-2xl font-bold">الإعدادات</h1>
+ main
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         <div className="card p-4 space-y-3">
           <p className="font-semibold">ملف المتجر</p>
+ codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
+          <div className="space-y-2 text-sm text-textSecondary">
+
           <div className="space-y-2 text-sm text-slate-600">
+ main
             <p>اسم المتجر: {tenant?.name ?? "متجر مثالي"}</p>
             <p>المنطقة الزمنية: Asia/Riyadh</p>
             <button className="btn-secondary">تحديث</button>
@@ -22,7 +31,11 @@ export default function SettingsPage() {
         </div>
         <div className="card p-4 space-y-3">
           <p className="font-semibold">الفريق</p>
+ codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
+          <ul className="text-sm text-textSecondary space-y-1">
+
           <ul className="text-sm text-slate-600 space-y-1">
+ main
             <li>سارة المالكي — Owner</li>
             <li>أحمد الشهري — Agent</li>
           </ul>
@@ -32,7 +45,11 @@ export default function SettingsPage() {
       <div className="grid md:grid-cols-2 gap-4">
         <div className="card p-4 space-y-3">
           <p className="font-semibold">التكاملات</p>
+codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
+          <div className="text-sm text-textSecondary space-y-1">
+
           <div className="text-sm text-slate-600 space-y-1">
+ main
             <p>WooCommerce API: ••••••</p>
             <p>n8n Webhook: https://hooks.n8n.io/ideal-agent</p>
             <p>Evolution API Key: ••••••</p>
@@ -44,7 +61,11 @@ export default function SettingsPage() {
         </div>
         <div className="card p-4 space-y-3">
           <p className="font-semibold">الأمان</p>
+ codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
+          <p className="text-sm text-textSecondary">تغيير كلمة المرور وإدارة الوصول</p>
+
           <p className="text-sm text-slate-600">تغيير كلمة المرور وإدارة الوصول</p>
+ main
           <button className="btn-secondary">تغيير كلمة المرور</button>
         </div>
       </div>

@@ -16,6 +16,18 @@ export function Toaster() {
       {toasts.map((toast) => (
         <div
           key={toast.id}
+ codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
+          className={`rounded-xl border px-4 py-3 shadow-lg bg-surface/95 backdrop-blur-md ${
+            toast.variant === "success"
+              ? "border-success/40 text-success"
+              : toast.variant === "destructive"
+              ? "border-primary text-textPrimary"
+              : "border-border text-textPrimary"
+          }`}
+        >
+          {toast.title && <p className="font-semibold text-sm">{toast.title}</p>}
+          {toast.description && <p className="text-xs text-textSecondary mt-1">{toast.description}</p>}
+
           className={`rounded-xl border px-4 py-3 shadow-lg bg-white/95 backdrop-blur-md ${
             toast.variant === "success"
               ? "border-emerald-200 text-emerald-900"
@@ -26,6 +38,7 @@ export function Toaster() {
         >
           {toast.title && <p className="font-semibold text-sm">{toast.title}</p>}
           {toast.description && <p className="text-xs text-slate-600 mt-1">{toast.description}</p>}
+ main
         </div>
       ))}
     </div>
