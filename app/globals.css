@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --surface: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --muted: 214 31% 95%;
+    --muted-foreground: 215 19% 35%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 204 64% 33%;
+
+    --primary: 204 79% 20%;
+    --primary-light: 204 64% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 204 64% 33%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 41 53% 55%;
+    --accent-foreground: 222 47% 11%;
+
+    --success: 152 60% 30%;
+    --success-foreground: 0 0% 100%;
+
+    --premium: 41 53% 55%;
+    --premium-foreground: 222 47% 11%;
+
+    --text-primary: 222 47% 11%;
+    --text-secondary: 215 19% 35%;
+
+    --radius: 1rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 220 28% 10%;
+      --foreground: 210 40% 98%;
+      --surface: 220 28% 13%;
+      --card: 220 28% 13%;
+      --card-foreground: 210 40% 98%;
+      --popover: 220 28% 15%;
+      --popover-foreground: 210 40% 98%;
+      --muted: 220 16% 18%;
+      --muted-foreground: 220 8% 65%;
+      --border: 220 16% 22%;
+      --input: 220 16% 22%;
+      --ring: 204 64% 55%;
+      --primary: 204 79% 45%;
+      --primary-light: 204 64% 60%;
+      --primary-foreground: 222 47% 11%;
+      --secondary: 204 64% 60%;
+      --secondary-foreground: 222 47% 11%;
+      --accent: 41 53% 65%;
+      --accent-foreground: 222 47% 11%;
+      --success: 152 60% 45%;
+      --success-foreground: 222 47% 11%;
+      --premium: 41 53% 65%;
+      --premium-foreground: 222 47% 11%;
+      --text-primary: 210 40% 98%;
+      --text-secondary: 220 8% 70%;
+    }
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-ibm antialiased;
+    direction: rtl;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :root {
+    color-scheme: light;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-surface shadow-card border border-border;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-muted text-textSecondary;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-primary-foreground hover:bg-primaryLight;
+  }
+
+  .btn-secondary {
+    @apply btn border border-primary text-primary bg-transparent hover:bg-primary/5;
+  }
+
+  .btn-success {
+    @apply btn bg-success text-success-foreground hover:bg-success/90;
+  }
+
+  .input {
+    @apply rounded-xl border border-border bg-surface px-4 py-2 text-textPrimary shadow-sm focus:border-ring focus:ring-ring;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-secondary));
+}
+
+.container {
+  @apply max-w-6xl mx-auto;
+}
