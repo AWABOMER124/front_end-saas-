@@ -1,0 +1,67 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  BarChart3,
+  MessageCircle,
+  Users,
+  ShoppingBag,
+  Package,
+  Bot,
+  Cable,
+  FileText,
+  Settings,
+  LifeBuoy,
+} from "lucide-react";
+
+const navItems = [
+  { label: "لوحة التحكم", href: "/app", icon: BarChart3 },
+  { label: "المحادثات", href: "/app/conversations", icon: MessageCircle },
+  { label: "العملاء", href: "/app/customers", icon: Users },
+  { label: "الطلبات", href: "/app/orders", icon: ShoppingBag },
+  { label: "المنتجات", href: "/app/products", icon: Package },
+  { label: "الأتمتة", href: "/app/automations", icon: Bot },
+  { label: "القنوات", href: "/app/channels", icon: Cable },
+  { label: "التقارير", href: "/app/reports", icon: FileText },
+  { label: "الإعدادات", href: "/app/settings", icon: Settings },
+  { label: "الدعم", href: "#support", icon: LifeBuoy },
+];
+
+export function Sidebar() {
+  const pathname = usePathname();
+
+  return (
+    <aside className="w-64 bg-white border-l border-slate-200 min-h-screen p-4 flex flex-col gap-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-xs text-slate-500">Perfect Team</p>
+          <p className="font-bold text-lg">Ideal Agent</p>
+          <p className="text-xs text-emerald-700 bg-emerald-50 rounded-full px-2 py-1 mt-1 inline-block">وضع العرض التجريبي</p>
+        </div>
+      </div>
+      <nav className="flex-1 space-y-1">
+        {navItems.map((item) => {
+          const active = pathname === item.href;
+          const Icon = item.icon;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+                active ? "bg-brand/10 text-brand" : "hover:bg-slate-100 text-slate-700"
+              }`}
+            >
+              <Icon className="h-5 w-5" />
+              <span>{item.label}</span>
+            </Link>
+          );
+        })}
+      </nav>
+      <div className="p-3 bg-slate-50 rounded-xl border border-dashed border-slate-200 text-sm text-slate-700">
+        <p className="font-semibold">دعم سريع</p>
+        <p className="text-xs mt-1 text-slate-500">فريق Perfect Team جاهز للمساعدة</p>
+      </div>
+    </aside>
+  );
+}
