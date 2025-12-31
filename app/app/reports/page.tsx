@@ -2,13 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { getReports, Report } from "@/lib/api";
- codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
-import { KpiCard } from "@/components/ui/KpiCard";
-import { LoadingSkeleton } from "@/components/ui/LoadingSkeleton";
-
 import { KPIStatCard } from "@/components/shared/KPIStatCard";
 import { LoadingSkeleton } from "@/components/shared/LoadingSkeleton";
- main
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const chartData = [
@@ -33,13 +28,8 @@ export default function ReportsPage() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
- codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
-          <p className="text-sm text-textSecondary">ملخص الأداء</p>
-          <h1 className="text-2xl font-bold text-textPrimary">التقارير</h1>
-
           <p className="text-sm text-slate-500">ملخص الأداء</p>
           <h1 className="text-2xl font-bold">التقارير</h1>
- main
         </div>
         <button className="btn-secondary">تصدير</button>
       </div>
@@ -49,33 +39,20 @@ export default function ReportsPage() {
         <>
           <div className="grid md:grid-cols-3 gap-4">
             {reports.map((report) => (
- codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
-              <KpiCard key={report.id} label={report.name} value={report.value} helper={`التغير ${report.change}`} />
-
               <KPIStatCard key={report.id} label={report.name} value={report.value} helper={`التغير ${report.change}`} />
- main
             ))}
           </div>
           <div className="card p-4">
             <div className="flex items-center justify-between mb-2">
- codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
-              <p className="font-semibold text-textPrimary">التفاعل الأسبوعي</p>
-              <input type="date" className="text-sm input" />
-
               <p className="font-semibold">التفاعل الأسبوعي</p>
               <input type="date" className="text-sm" />
- main
             </div>
             <ResponsiveContainer width="100%" height={240}>
               <LineChart data={chartData}>
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
- codex/build-rtl-first-saas-dashboard-for-ideal-agent-25hvyg
-                <Line type="monotone" dataKey="value" stroke="hsl(var(--primary))" strokeWidth={2} />
-
                 <Line type="monotone" dataKey="value" stroke="#0F766E" strokeWidth={2} />
- main
               </LineChart>
             </ResponsiveContainer>
           </div>
